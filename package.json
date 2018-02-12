@@ -1,0 +1,34 @@
+{
+  "name": "htmlindexer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/output.cjs.js",
+  "scripts": {
+    "cjs": "rollup -c rollup.config.js -i src/htmlIndexer.js -f cjs -o dist/output.cjs.js",
+    "es": "rollup -c rollup.config.js -i src/htmlIndexer.js -f es -o dist/output.es.js",
+    "build": "npm run cjs && npm run es",
+    "test": "./node_modules/.bin/mocha tests/test.js --reporter spec"
+  },
+  "module": "dist/output.es.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "html-tokenize": "^2.0.0",
+    "memory-streams": "^0.1.3",
+    "pmx": "^1.5.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^2.15.0",
+    "mocha": "^5.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
+  }
+}
